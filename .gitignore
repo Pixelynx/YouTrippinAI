@@ -12,6 +12,7 @@ media
 
 # Virtual Environment
 /venv/
+.venv2
 
 # React / Node.js
 /frontend/node_modules/
