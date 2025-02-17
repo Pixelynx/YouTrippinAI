@@ -17,6 +17,9 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 
+from api.views import test_query
+
 urlpatterns = [
+    path('api/test-query/', test_query, name='test_query'),
     path('admin/', admin.site.urls),
 ]
