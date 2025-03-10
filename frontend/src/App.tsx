@@ -1,44 +1,25 @@
-import React from 'react'
+import React, { useState } from 'react'
 import Header from './Header/Header';
-import UserInfoInput from './UserInputForm/UserInfoInput';
-import CardDetails from './RecommendationCard/CardDetails';
 import Footer from './Footer/Footer';
 
-import { ThemeProvider } from '@emotion/react';
+import { ThemeProvider } from '@mui/material/styles';
 import { Box, CssBaseline } from '@mui/material';
-import darkTheme from './themes/darkTheme';
+import purpleTheme from './themes/purpleTheme';
+import FormContainer from './UserInputForm/FormContainer';
 
-const App = () => {
+
+const App: React.FC = () => {
   return (
-    <ThemeProvider theme={darkTheme}>
+    <ThemeProvider theme={purpleTheme}>
       <CssBaseline />
-      <Box
-        sx={{
-          display: "flex",
-          justifyContent: "center",
-          alignItems: "center",
-          height: "100vh",
-          width: "100%",
-        }}
-      >
-        <Box
-          sx={{
-            width: "75%",
-            maxWidth: "1200px",
-            padding: 2,
-            backgroundColor: "background.paper",
-            borderRadius: 2,
-            boxShadow: 3,
-          }}
-        >
-          <Header />
-          <UserInfoInput />
-          <CardDetails />
-          <Footer />
+      <Box sx={{ display: 'flex', flexDirection: 'column', minHeight: '100vh' }}>
+        <Header />
+        <FormContainer />
+        <Box sx={{ flexGrow: 1 }} />
+        <Footer />
       </Box>
-    </Box>
-    </ThemeProvider >
+    </ThemeProvider>
   );
-}
+};
 
 export default App;
